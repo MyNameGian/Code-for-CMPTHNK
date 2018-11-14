@@ -1,0 +1,110 @@
+#imports
+import pygame
+import sys 
+
+pygame.init()
+
+#The window thing
+size = WIDTH, HEIGHT =  900, 700
+
+screen = pygame.display.set_mode((size))
+pygame.display.set_caption("Game Loop Test") #title of window
+
+#background image
+backg = pygame.image.load("bricks.png").convert()
+
+blue = (51,51,255)
+black = (0,0,0)
+green = (102,255,102)
+
+playerxy = [400,350]
+playersize = 50
+
+compxy = [playerxy[0]-30, playerxy[1]-20]
+compsize = 15
+
+#LINE = x= 800 
+wallxy = [800, 0]
+
+
+gameover = False 
+
+#Game Loop
+while not gameover:	
+
+
+	for event in pygame.event.get():
+		print(event)
+
+		if event.type == pygame.QUIT:
+			sys.exit()
+
+
+	#PLAYER AND COMPANION MOVEMENT
+
+	keypressed = pygame.key.get_pressed()		
+
+	if keypressed[pygame.K_LEFT]:
+			playerxy[0] -= .5 
+			compxy[0] -= .5
+
+	if keypressed[pygame.K_RIGHT]:
+			playerxy[0] += .5 
+			compxy[0] += .5
+
+	if keypressed[pygame.K_UP]:
+			playerxy[1] -= .5
+			compxy[1] -= .5
+
+	if keypressed[pygame.K_DOWN]:
+			playerxy[1] += .5
+			compxy[1] += .5
+
+	#COLLISION OF PLAYER AND WALL
+	def collide(playerxy,wallxy):
+		px = playerxy[0]
+		py = playerxy[1]
+		wx = wallxy[0]
+		wy = wallxy[1]
+
+		if ((px+playersize) >= wx and py > wy ):
+			return True
+		return False
+			
+
+
+	if collide(playerxy,wallxy):
+		print("YOU HAVE HIT A WALL, SOLVE THE PROBLEM")
+		gameover = True 
+
+	def barrier(playerxy,wallxy):
+		px = playerxy[0]
+		py = playerxy[1]
+		wx = wallxy[0]
+		wy = wallxy[1]
+
+		if ((px+playersize) < 0) or (py < 0) or (py+playersize > HEIGHT):
+			return True
+		return False
+			
+
+	if barrier(playerxy,wallxy):
+		print("IT IS TOO DARK GO BACK")
+		
+
+
+
+	screen.fill((0,0,0))
+	screen.blit(backg,(0,0))
+	#objects
+	pygame.draw.rect(screen,blue,( playerxy[0],  playerxy[1] , playersize, playersize) )
+	pygame.draw.rect(screen,green,( compxy[0],  compxy[1] , compsize, compsize) )
+	pygame.draw.rect(screen,black,(wallxy[0], wallxy[1], 15,800))
+	pygame.display.update()
+
+pygame.QUIT
+sys.exit
+
+
+
+
