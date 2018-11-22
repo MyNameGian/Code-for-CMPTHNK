@@ -23,7 +23,7 @@ print ("--------")
 
 #first row
 print("")
-print("First step: Multiply", d,"by", a*10,"&", b, "then, add it all together! 🙂")
+print("First step: Multiply", d,"by", a*10,"&", b, "then, add it all together! :)")
 print("")
 first_row = int(input ("Your answer for the first row: "))
 first_answer = (a*d)*10 + d*b
@@ -46,7 +46,7 @@ print("")
 
 
 print("")
-print("Second step: Multiply", c,"by", (a*10)*10,"&", b*10, "then, add it all together! 🙂")
+print("Second step: Multiply", c,"by", (a*10)*10,"&", b*10, "then, add it all together! :)")
 print("")
 
 
@@ -90,4 +90,11 @@ else:
 	
 print("")
 print("Congratulations! You got your final answer to the problem!")
-print("")
+print("")	
+
+
+
+
+
+
+
