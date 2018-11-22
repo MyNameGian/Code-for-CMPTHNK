@@ -12,7 +12,7 @@ c = randint (1,9)
 d = randint (0,9)
 
 #alined 2 by 2 digit
-print ("    ", end='')
+print ("   ", end='')
 print ("  ", a, end='')
 print (b)
 print ("  ""x", end='')
@@ -91,10 +91,4 @@ else:
 print("")
 print("Congratulations! You got your final answer to the problem!")
 print("")	
-
-
-
-
-
-
 
