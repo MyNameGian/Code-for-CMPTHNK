@@ -1,18 +1,53 @@
-from random import randint 
+from random import randint
+
 
 # random samples
 # "a" first digit of first 2 by 2 random number
 # "b" second digit of first 2 by 2 random number
 # "c" first digit of second 2 by 2 random number
-# "d" second digit of second 2 by 2 random number 
+# "d" second digit of second 2 by 2 random number
 
 a = randint (1,9)
 b = randint (0,9)
 c = randint (1,9)
 d = randint (0,9)
 
+
+# random samples for assessment  #1
+# "first_ran_a" first digit of first 2 by 2 random number 
+# "first_ran_b" second digit of first 2 by 2 random number 
+# "first_ran_c" first digit of second 2 by 2 random number 
+# "first_ran_d" second digit of second 2 by 2 random number 
+
+first_ran_a = randint (1,9)
+first_ran_b = randint (0,9)
+first_ran_c = randint (1,9)
+first_ran_d = randint (0,9)
+
+
+# random samples for assessment #2 
+# "second_ran_a" first digit of first 2 by 2 random number 
+# "second_ran_b" second digit of first 2 by 2 random number 
+# "second_ran_c" first digit of second 2 by 2 random number 
+# "second_ran_d" second digit of second 2 by 2 random number 
+
+second_ran_a = randint (1,9)
+second_ran_b = randint (0,9)
+second_ran_c = randint (1,9)
+second_ran_d = randint (0,9)
+
+
+#LESSON
+
+print("")
+print("WELCOME TO 2 BY 2 MULTIPLICATION!")
+print("YOU WILL LEARN HOW TO MULTIPLY A 2-DIGIT NUMBER BY ANOTHER 2-DIGIT NUMBER!")
+print("LET US NOW BEGIN WITH THE LESSON!")
+print("")
+
+
 #alined 2 by 2 digit
-print ("   ", end='')
+print ("    ", end='')
 print ("  ", a, end='')
 print (b)
 print ("  ""x", end='')
@@ -23,51 +58,93 @@ print ("--------")
 
 #first row
 print("")
-print("First step: Multiply", d,"by", a*10,"&", b, "then, add it all together! :)")
+print("First step: Multiply (",d,"*", a*10, ") & (", d,"*", b, ") then, add it all together!")
 print("")
-first_row = int(input ("Your answer for the first row: "))
+first_row = int(input ("Your answer for the first step: "))
 first_answer = (a*d)*10 + d*b
- 
 
-print("")
-print ("THE ANSWER IS", (a*d)*10 + d*b)
-print("")
-if first_row == first_answer: 
-	print("Your answer in correct! ")
+tries = 4
 
+while first_row != first_answer and tries > 0:
+
+        tries = tries-1
+        print("")
+        first_row = int(input ("Try again!: ")) 
+        print("")
+        
+if first_row == first_answer:
+        print("")
+        print("Your answer in correct!")
+        print("You may now enter the 2nd room!")
+        print ("THE CORRECT ANSWER IS", first_answer)
+        print("")
 else:
-	print("Your answer in incorrect!")
+        print("")
+        print("Your answer in incorrect!")
+        print ("THE CORRECT ANSWER IS", first_answer)
+        print("You may now enter the 2nd room!")
+        print("")
+
+
 print("")	
-print ("----------------------------------------------------------------")
+print ("-----------------------------                                 -----------------------------------")
 print("")
+
+
+
+#alined 2 by 2 digit
+print ("    ", end='')
+print ("  ", a, end='')
+print (b)
+print ("  ""x", end='')
+print ("  ", c, end='')
+print (d)
+print ("--------")
 
 
 #second row
-
-
 print("")
-print("Second step: Multiply", c,"by", (a*10)*10,"&", b*10, "then, add it all together! :)")
+print("Second step: Multiply ", c,"* (", (a*10)," * 10 )  & ", c,"* (", b ,"* 10 )  then, add it all together!")
 print("")
 
 
-second_row = int(input ("Your answer for the second row: "))
+second_row = int(input ("Your answer for the second step: "))
 second_answer = ((a*c)*10 + (c*b))*10
+tries = 4
 
-print("")
-print("THE ANSWER IS", ((a*c)*10 + (c*b))*10)
-print("")
+while second_row != second_answer and tries > 0:
 
-
-if second_row == second_answer:  
-	print("Your answer in correct! ")
-
+        tries = tries-1
+        print("")
+        second_row = int(input ("Try again!: ")) 
+        print("")
+        
+if second_row == second_answer:
+        print("")
+        print("Your answer in correct!")
+        print("You may now enter the 3rd room!")
+        print ("THE CORRECT ANSWER IS", second_answer)
+        print("")
 else:
-	print("Your answer in incorrect!")
+        print("")
+        print("Your answer in incorrect!")
+        print ("THE CORRECT ANSWER IS", second_answer)
+        print("You may now enter the 3rd room!")
+        print("")
 
 
+print("")	
+print ("-----------------------------                                 -----------------------------------")
 print("")
-print ("----------------------------------------------------------------")
-print("")
+
+#alined 2 by 2 digit
+print ("    ", end='')
+print ("  ", a, end='')
+print (b)
+print ("  ""x", end='')
+print ("  ", c, end='')
+print (d)
+print ("--------")
 
 #thrid row
 
@@ -75,20 +152,155 @@ print("")
 print("Third step: Now add",(a*d)*10 + d*b,"and", ((a*c)*10 + (c*b))*10, "together to get your final answer!")
 print("")
 
-third_row = int(input ("Your answer for the third row: "))
+third_row = int(input ("Your answer for the third step: "))
 third_answer = ((a*10)+b) * ((c*10)+d)
+tries = 4
 
-print("")
-print("THE ANSWER IS", ((a*10)+b) * ((c*10)+d))
-print("")
+while third_row != third_answer and tries > 0:
 
-if third_row == third_answer:  
-	print("Your answer in correct! ")
+        tries = tries-1
+        print("")
+        third_row = int(input ("Try again!: ")) 
+        print("")
+        
+if third_row == third_answer:
+        print("")
+        print("Your answer in correct!")
+        print("Congratulations! You got your final answer to the 2 by 2 problem!")
+        print ("THE CORRECT ANSWER IS", third_answer)
+        print("")
+else:	
+        print("")
+        print("Your answer in incorrect!")
+        print ("THE CORRECT ANSWER IS", third_answer)
+        print("You have finished the tutorial! You still need practice!")
+        print("")
 
-else:
-	print("Your answer in incorrect!")
-	
-print("")
-print("Congratulations! You got your final answer to the problem!")
 print("")	
+print ("-----------------------------                                 -----------------------------------")
+print("")
+
+
+#first assessment
+print("")
+print("WELCOME TO THE ASSESSMENT PHASE!")
+print("USE THE STEPS YOU'VE LEARNED IN THE TUTORIAL TO ANSWER THE PROBLEMS!")
+print("YOU ONLY HAVE 3 TRIES TO GET THE ANSWER!")
+print("BEGIN!")
+print("")
+
+
+#alined 2 by 2 digit of first assessment
+print ("    ", end='')
+print ("  ", first_ran_a, end='')
+print (first_ran_b)
+print ("  ""x", end='')
+print ("  ", first_ran_c, end='')
+print (first_ran_d)
+print ("--------")
+
+
+#first step
+print("")
+print("")
+first_row_asses = int(input ("Your answer for the first step: "))
+first_answer_asses = (first_ran_a*first_ran_d)*10 + first_ran_d*first_ran_b
+tries_asses = 2
+
+while first_row_asses != first_answer_asses and tries_asses > 0:
+
+        tries_asses = tries_asses-1
+        print("")
+        first_row_asses = int(input ("Try again!: ")) 
+        print("")
+        
+if first_row_asses == first_answer_asses:
+        print("")
+        print("Your answer in correct!")
+        print ("THE CORRECT ANSWER IS", first_answer_asses)
+        print("You may now answer the next step")
+        print("")
+else:
+        print("")
+        print("Your answer in incorrect!")
+        print ("THE CORRECT ANSWER IS", first_answer_asses)
+        print("You may now answer the next step")
+        print("")
+
+#alined 2 by 2 digit of first assessment
+print ("    ", end='')
+print ("  ", first_ran_a, end='')
+print (first_ran_b)
+print ("  ""x", end='')
+print ("  ", first_ran_c, end='')
+print (first_ran_d)
+print ("--------")
+
+
+#second step
+print("")
+print("")
+second_row_asses = int(input ("Your answer for the second step: "))
+second_answer_asses = ((first_ran_a*first_ran_c)*10 + (first_ran_c*first_ran_b))*10
+tries_asses = 2
+
+while second_row_asses != second_answer_asses and tries_asses > 0:
+
+        tries_asses = tries_asses-1
+        print("")
+        second_row_asses = int(input ("Try again!: ")) 
+        print("")
+        
+if second_row_asses == second_answer_asses:
+        print("")
+        print("Your answer in correct!")
+        print ("THE CORRECT ANSWER IS", second_answer_asses)
+        print("You may now answer the next step")
+        print("")
+else:
+        print("")
+        print("Your answer in incorrect!")
+        print ("THE CORRECT ANSWER IS", second_answer_asses)
+        print("You may now answer the next step")
+        print("")
+
+#alined 2 by 2 digit of first assessment
+print ("    ", end='')
+print ("  ", first_ran_a, end='')
+print (first_ran_b)
+print ("  ""x", end='')
+print ("  ", first_ran_c, end='')
+print (first_ran_d)
+print ("--------")
+
+
+#third step
+print("")
+print("")
+third_row_asses = int(input ("Your answer for the third step: "))
+third_answer_asses = ((first_ran_a*10)+first_ran_b) * ((first_ran_c*10)+first_ran_d)
+tries_asses = 2
+
+while third_row_asses != third_answer_asses and tries_asses > 0:
+
+        tries_asses = tries_asses-1
+        print("")
+        third_row_asses = int(input ("Try again!: ")) 
+        print("")
+        
+if third_row_asses == third_answer_asses:
+        print("")
+        print("Your answer in correct!")
+        print ("THE CORRECT ANSWER IS", third_answer_asses)
+        print("YOU HAVE COMPLETED THE ASSESSMENT!")
+        print("")
+else:
+        print("")
+        print("Your answer in incorrect!")
+        print ("THE CORRECT ANSWER IS", third_answer_asses)
+        print("YOU HAVE COMPLETED THE ASSESSMENT!")
+        print("")
+
+        
+
 
