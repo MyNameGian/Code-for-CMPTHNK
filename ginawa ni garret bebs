@@ -25,18 +25,6 @@ first_ran_c = randint (1,9)
 first_ran_d = randint (0,9)
 
 
-# random samples for assessment #2 
-# "second_ran_a" first digit of first 2 by 2 random number 
-# "second_ran_b" second digit of first 2 by 2 random number 
-# "second_ran_c" first digit of second 2 by 2 random number 
-# "second_ran_d" second digit of second 2 by 2 random number 
-
-second_ran_a = randint (1,9)
-second_ran_b = randint (0,9)
-second_ran_c = randint (1,9)
-second_ran_d = randint (0,9)
-
-
 #LESSON
 
 print("")
